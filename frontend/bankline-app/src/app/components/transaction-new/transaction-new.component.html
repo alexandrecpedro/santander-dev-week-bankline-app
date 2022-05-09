@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="jumbotron">
+        <h1 class="display-6">Transaction</h1>
+        <p class="lead-1">Enter a new transaction</p>
+        <hr class="my-2">
+        <div class="row g-2">
+            <div class="col-md-3">
+                <label for="iDate" class="form-label">Date</label>
+                <input type="date" [(ngModel)]="dateTime" class="form-control" id="iDate">
+            </div>
+            <div class="col-md-6">
+                <label for="iAccountHolder" class="form-label">Account Holder</label>
+                <select id="iAccountHolder" [(ngModel)]="accountholder" class="form-select">
+                    <option *ngFor="let c of accountholders" [ngValue]="c">{{c.cpf}}-{{c.nome}}</option>
+                </select>
+            </div>
+            <div class="col-9">
+                <label for="iDescription" class="form-label">Description</label>
+                <input type="text" [(ngModel)]="description" class="form-control" id="iDescription" placeholder="Inform a description">
+            </div>
+            <div class="col-md-5">
+                <label for="iType" class="form-label">Transaction Type</label>
+                <select id="iType" [(ngModel)]="type" class="form-select">
+                    <option selected>REVENUE</option>
+                    <option>EXPENSE</option>
+                </select>
+            </div>
+            <div class="col-md-4">
+                <label for="iValue" class="form-label">R$ Value</label>
+                <input type="text" [(ngModel)]="value" currencyMask [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }" class="form-control" id="iValue">
+            </div>
+            <div class="d-grid gap-2 d-md-flex ">
+                <button class="btn btn-outline-primary me-md-2" (click)="save()" type="button">Confirm</button>
+                <a routerLink="/transactions" class="btn btn-outline-secondary">Cancel</a>
+            </div>
+        </div>
+
+    </div>
+
+</div>
