@@ -55,6 +55,7 @@ As seguintes ferramentas foram usadas na construção do projeto:<br><br>
 <!-- |          In-memory data store          |                 REDIS               |              https://redis.io/                                    | -->
 |                 Security               |                 JWT                 |              https://jwt.io/                                          |
 |   Programming Language (Client Side)   |                ANGULAR              |              https://angular.io/                       |
+|               Bootstrap                |              BOOTSTRAP 5            |              https://getbootstrap.com/                            |
 
 
 <br>
@@ -74,6 +75,7 @@ As seguintes ferramentas foram usadas na construção do projeto:<br><br>
   <br>
   <h3>Frontend</h3>
   <img width =' 100px ' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" />
+  <img width =' 100px ' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" />
   <br>
   <br>
   <h3>Mobile App</h3>
@@ -96,16 +98,14 @@ As seguintes ferramentas foram usadas na construção do projeto:<br><br>
 <ol>
     <li>Aula 1 - Configurando/preparando os ambientes de desenvolvimento (Infraestrutura)
       <ul>
-        <li>Instalar Eclipse (IDE) e JDK 8 (1.8), VS Code, PostgreSQL, Android Studio</li>
+        <li>Instalar Eclipse (IDE) e JDK 8 (1.8), VS Code, PostgreSQL, Android Studio e NodeJS</li>
         <li>Abrir e logar o Eclipse com JDK 8 (1.8)</li>
         <li>Abrir, logar e criar um novo banco de dados (banklineapi_db) no PostgreSQL</li>
         <li>Abrir o VS Code</li>
       </ul>
     </li>
     <br>
-    <li>Aula 2 - Abstraindo o domínio bancário em uma API REST com Java (Backend)</li>
-    <br>
-    <li>Parte 3 - Criando back-end com Java Spring Boot
+    <li>Aula 2 - Abstraindo o domínio bancário em uma API REST com Java Spring Boot (Backend)</li>
       <ul>
         <li>Abrir o Spring Initializr e configurar o Spring Boot</li>
         <li>Gerar o arquivo Spring Boot e abrir no Eclipse</li>
@@ -117,25 +117,97 @@ As seguintes ferramentas foram usadas na construção do projeto:<br><br>
         <li>Testar as rotas no SWAGGER
         URL: http://localhost:8080/swagger-ui/index.html
         </li>
+        <li>Subir código no GitHub e fazer conexão desses arquivos GitHub no Heroku</li>
       </ul>
     </li>
     <br>
-    <li>Aula 4 - Construindo um Frontend Angular de extrato bancário
+    <li>Aula 3 - Construindo um Frontend Angular de extrato bancário
       <ul>
+        <li>Abrir teminal de comando do VS Code na pasta do projeto </li> 
+        <li>Instalar, no NodeJS, o Angular CLI: npm install -g @angular/cli</li>
         <li>Novo projeto: ng new nomeProjeto </li>
-        <li>Iniciando projeto: ng server --open </li>
-        <li>Novo componente: ng generate component nomeComponente </li>
-        <li>Criar interface: src/app/model/participante.ts</li>
+        <li>Iniciando projeto: ng serve --open || ng serve -o</li>
+        <ul><strong>Construção do App</strong>
+          <li>Novo componente: ng generate component nomeComponente 
+          - exibir as movimentações: ng g c components/movimentacao-list<br>
+          - adicionar uma nova movimentação: ng g c components/movimentacao-new</li>
+          <li>Configurando a rota para exibir os novos componentes: src/app/app-routing.module.ts</li>
+          <li>Removendo conteúdo gerado pelo Angular e exibir nossos componentes: app.component.html</li>
+          <li>Adicionando a biblioteca do Bootstrap pelo angular-cli: ng add @ng-bootstrap/ng-bootstrap
+            Ps: Se ao tentar instalar o bootstrap apresentar algum erro, execute os comandos: 
+            (1) npm config set legacy-peer-deps true
+            (2) ng add @ng-bootstrap/ng-bootstrap
+          </li>
+          <li>Criando uma variável que representará as nossas movimentações: movimentacao-list.component.ts</li>
+          <li>Estruturando a tabela que exibibirá as movimentações: movimentacao-list.component.html</li>
+        </ul>
+        <ul><strong>Backend CORS</strong>
+          <li>Configurar CORS: com.dio.santander.bankline.api.config/WebConfig.java</li>
+          <li>Rodar backend SpringBoot</li>
+        </ul>
+        <ul><strong>Integrando com nossa API</strong>
+          <li>Criando o serviço de movimentações: ng g s services/movimentacao </li>
+          <li>Adicionar duas dependências no projeto:
+          // app.module.ts
+            import { FormsModule } from '@angular/forms';
+            import { HttpClientModule } from '@angular/common/http';
+            @NgModule({
+              imports: [
+                FormsModule,
+                HttpClientModule
+              ],  
+            })
+          </li>
+          <li>Criar recurso para movimentações já realizadas: movimentacao.service.ts</li>
+          <li>Determinar que quando o componente de listagem de movimentações for carregado seja realizada uma requisição à nossa API: movimentacao-list.component.ts</li>
+        </ul>
+        <ul><strong>Formatando campos na tela</strong>
+          <li>Adicionado algumas configurações no módulo do projeto: app.module.ts</li>
+          <li>Adicionando as formatações nos campos Data Hora e Valor: movimentacao-list.component.html</li>
+          <li>Aplicando estilo com base em uma condição em nossos registros: movimentacao-list.component.html</li>
+          <li>Adicionando o botão Novo na página de movimentação: movimentacao-list.component.html</li>
+          <li>Centralizando o conteúdo da página: movimentacao-list.component.html</li>
+          <li>Configurando a rota para a página para cadastrar uma nova movimentação: movimentacao-list.component.html</li>
+        </ul>
+        <ul><strong>Nova Movimentação</strong>
+          <li>Exibindo e atualizando campos para entrada de nova movimentação: movimentacao-new.component.html</li>
+          <li>Criando o serviço para acessar os recursos de Correntista: ng g s services/correntista</li>
+          <li>Inserindo a regra de negócio: services/correntista.service.ts</li>
+          <li>Conectar a nossa API para buscar os correntistas do banco de dados: components/movimentacao-new.component.ts</li>
+          <li>Exibir os correntistas na tela de nova movimentação: movimentacao-new.component.html</li>
+          <li>Criar uma variável correntista para poder identificar qual foi o correntista selecionado: movimentacao-new.component.ts</li>
+          <li>Instalar componente ng2-currency-mask: npm i ng2-currency-mask</li>
+          <li>Definir uma máscara no campos R$ Valor: transaction-new.component.html</li>
+        </ul>
+        <ul><strong>Incluindo uma movimentação</strong>
+          <li>Adicionando o método de inclusão (POST) via API: services/movimentacao.service.ts</li>
+          <li>Criando o método para ser chamado na tela e assim incluir a movimentação: components/movimentacao-new.component.ts</li>
+          <li>Executar o método save no click do botão Confirmar: components/movimentacao-new.components.html</li>
+        </ul>
+        <ul><strong>Movimentações por Correntista</strong>
+          <li>Interação constante com a API Back-end, e isso será via Swagger</li>
+          <li>Refinando nossa tela de consulta de movimentações: transaction-list.component.html</li>
+          <li>Criando o serviço para listar as movimentações por correntista: 
+          services/movimentacao.service.ts && components/movimentacao-list.component.ts</li>
+        </ul>
         <li>Criando rota: ng generate module app-routing --flat --module=app</li>
-        <li>Importar HttpClientModule em app.module.ts [parte de imports]</li>
         <li>Criar serviço: src/app/service/RestService.ts</li>
         <li>Add @CrossOrigin em ParticipanteController.java e VotacaoController.java</li>
         <li>Implementar as rotas</li>
       </ul>
+      <ul><strong>Correntistas</strong>
+        <li>Novo componente correntista: ng g c components/correntista</li>
+        <li>Nova rota para novo componente: app-routing.module.ts</li>
+        <li>Navegação simples para a rota correntistas e CorrentistaComponent: movimentacao-list.component.html</li>
+        <li>Tela para inclusão e listagem de correntistas: components/correntista.component.html</li>
+        <li>Regra de negócio para inclusão e listagem dos correntistas: 
+        components/correntista.component.ts</li>
+        <li>Criando mais uma funcionalidade no serviço de correntistas: 
+        services/correntista.service.ts</li>
+      </ul>
     </li>
     <br>
-    <li>Parte 5 - Integrando back-end/front-end e acessando dados</li>  
-    <li>Aula 6 - Construindo um App Android de extrato bancário
+    <li>Aula 4 - Construindo um App Android de extrato bancário
         <ul>
             <li>Parte 1 - Introdução ao Desenvolvimento Mobile</li>
             <li>Parte 2 - Android Nativo: Ambiente de Desenvolvimento</li>
