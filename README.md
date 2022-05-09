@@ -37,26 +37,25 @@ For the client side, allow clients to access their bank statements and account b
 <h2> 🛠 Tecnologias </h2>
 As seguintes ferramentas foram usadas na construção do projeto:<br><br>
 
-|                  Tipo                  |                Ferramenta                |                                 Referência                                  |
-| :------------------------------------: | :---------------------------------: | :-------------------------------------------------------------------------: |
-|       Programming Language (App)       |              KOTLIN                 |              https://kotlinlang.org/                                        | 
-|                   IDE                  |          ANDROID STUDIO             |              https://developer.android.com/studio                           |
-|   Scripts and dependencies manager     |              GRADLE                 |              https://gradle.org/                                            |
-|           Scripts language             |              GROOVY                 |              https://gradle.org/                                            |
-<!-- |          Injection Framework           |                KOIN                 |              https://insert-koin.io/                                        | -->
-|            HTTP API Library            |              RETROFIT2              |              https://square.github.io/retrofit/                             |
-<!-- |          HTTP Client Library           |              OkHTTP3                |              https://square.github.io/okhttp/                               | -->
-|   Programming Language (Server Side)   |                JAVA                 |              https://docs.oracle.com/javase/tutorial/                       |
-|          IDE Eclipse (Server Side)     |                ECLIPSE              |              https://docs.oracle.com/javase/tutorial/                       |
-|               Spring Boot              |            SPRING BOOT              |              https://start.spring.io/                                       |
-|           API RESTful (JSON)           |               SWAGGER3              |              https://swagger.io/                                            |
-|                 Testing                |                JUNIT5               |              https://junit.org/junit5/                              |
-|                 Database               |            POSTGRE SQL              |              https://www.postgresql.org/                                    |
-<!-- |          In-memory data store          |                 REDIS               |              https://redis.io/                                    | -->
-|                 Security               |                 JWT                 |              https://jwt.io/                                          |
-|   Programming Language (Client Side)   |                ANGULAR              |              https://angular.io/                       |
-|               Bootstrap                |              BOOTSTRAP 5            |              https://getbootstrap.com/                            |
-
+|                Tipo                |      Ferramenta      |                Referência                |
+| :--------------------------------: | :------------------: | :--------------------------------------: | -------------------------------- | --- |
+|     Programming Language (App)     |        KOTLIN        |         https://kotlinlang.org/          |
+|                IDE                 |    ANDROID STUDIO    |   https://developer.android.com/studio   |
+|  Scripts and dependencies manager  |        GRADLE        |           https://gradle.org/            |
+|          Scripts language          |        GROOVY        |           https://gradle.org/            |
+|                <!--                | Injection Framework  |                   KOIN                   | https://insert-koin.io/          | --> |
+|          HTTP API Library          |      RETROFIT2       |    https://square.github.io/retrofit/    |
+|                <!--                | HTTP Client Library  |                 OkHTTP3                  | https://square.github.io/okhttp/ | --> |
+| Programming Language (Server Side) |         JAVA         | https://docs.oracle.com/javase/tutorial/ |
+|     IDE Eclipse (Server Side)      |       ECLIPSE        | https://docs.oracle.com/javase/tutorial/ |
+|            Spring Boot             |     SPRING BOOT      |         https://start.spring.io/         |
+|         API RESTful (JSON)         |       SWAGGER3       |           https://swagger.io/            |
+|              Testing               |        JUNIT5        |        https://junit.org/junit5/         |
+|              Database              |     POSTGRE SQL      |       https://www.postgresql.org/        |
+|                <!--                | In-memory data store |                  REDIS                   | https://redis.io/                | --> |
+|              Security              |         JWT          |             https://jwt.io/              |
+| Programming Language (Client Side) |       ANGULAR        |           https://angular.io/            |
+|             Bootstrap              |     BOOTSTRAP 5      |        https://getbootstrap.com/         |
 
 <br>
 <br>
@@ -127,6 +126,7 @@ As seguintes ferramentas foram usadas na construção do projeto:<br><br>
         <li>Instalar, no NodeJS, o Angular CLI: npm install -g @angular/cli</li>
         <li>Novo projeto: ng new nomeProjeto </li>
         <li>Iniciando projeto: ng serve --open || ng serve -o</li>
+        <br>
         <ul><strong>Construção do App</strong>
           <li>Novo componente: ng generate component nomeComponente 
           - exibir as movimentações: ng g c components/movimentacao-list<br>
@@ -141,10 +141,12 @@ As seguintes ferramentas foram usadas na construção do projeto:<br><br>
           <li>Criando uma variável que representará as nossas movimentações: movimentacao-list.component.ts</li>
           <li>Estruturando a tabela que exibibirá as movimentações: movimentacao-list.component.html</li>
         </ul>
+        <br>
         <ul><strong>Backend CORS</strong>
           <li>Configurar CORS: com.dio.santander.bankline.api.config/WebConfig.java</li>
           <li>Rodar backend SpringBoot</li>
         </ul>
+        <br>
         <ul><strong>Integrando com nossa API</strong>
           <li>Criando o serviço de movimentações: ng g s services/movimentacao </li>
           <li>Adicionar duas dependências no projeto:
@@ -161,6 +163,7 @@ As seguintes ferramentas foram usadas na construção do projeto:<br><br>
           <li>Criar recurso para movimentações já realizadas: movimentacao.service.ts</li>
           <li>Determinar que quando o componente de listagem de movimentações for carregado seja realizada uma requisição à nossa API: movimentacao-list.component.ts</li>
         </ul>
+        <br>
         <ul><strong>Formatando campos na tela</strong>
           <li>Adicionado algumas configurações no módulo do projeto: app.module.ts</li>
           <li>Adicionando as formatações nos campos Data Hora e Valor: movimentacao-list.component.html</li>
@@ -169,6 +172,7 @@ As seguintes ferramentas foram usadas na construção do projeto:<br><br>
           <li>Centralizando o conteúdo da página: movimentacao-list.component.html</li>
           <li>Configurando a rota para a página para cadastrar uma nova movimentação: movimentacao-list.component.html</li>
         </ul>
+        <br>
         <ul><strong>Nova Movimentação</strong>
           <li>Exibindo e atualizando campos para entrada de nova movimentação: movimentacao-new.component.html</li>
           <li>Criando o serviço para acessar os recursos de Correntista: ng g s services/correntista</li>
@@ -179,40 +183,38 @@ As seguintes ferramentas foram usadas na construção do projeto:<br><br>
           <li>Instalar componente ng2-currency-mask: npm i ng2-currency-mask</li>
           <li>Definir uma máscara no campos R$ Valor: transaction-new.component.html</li>
         </ul>
+        <br>
         <ul><strong>Incluindo uma movimentação</strong>
           <li>Adicionando o método de inclusão (POST) via API: services/movimentacao.service.ts</li>
           <li>Criando o método para ser chamado na tela e assim incluir a movimentação: components/movimentacao-new.component.ts</li>
           <li>Executar o método save no click do botão Confirmar: components/movimentacao-new.components.html</li>
         </ul>
+        <br>
         <ul><strong>Movimentações por Correntista</strong>
           <li>Interação constante com a API Back-end, e isso será via Swagger</li>
           <li>Refinando nossa tela de consulta de movimentações: transaction-list.component.html</li>
           <li>Criando o serviço para listar as movimentações por correntista: 
           services/movimentacao.service.ts && components/movimentacao-list.component.ts</li>
         </ul>
-        <li>Criando rota: ng generate module app-routing --flat --module=app</li>
-        <li>Criar serviço: src/app/service/RestService.ts</li>
-        <li>Add @CrossOrigin em ParticipanteController.java e VotacaoController.java</li>
-        <li>Implementar as rotas</li>
+        <br>
+        <ul><strong>Correntistas</strong>
+          <li>Novo componente correntista: ng g c components/correntista</li>
+          <li>Nova rota para novo componente: app-routing.module.ts</li>
+          <li>Navegação simples para a rota correntistas e CorrentistaComponent: movimentacao-list.component.html</li>
+          <li>Tela para inclusão e listagem de correntistas: components/correntista.component.html</li>
+          <li>Regra de negócio para inclusão e listagem dos correntistas: 
+          components/correntista.component.ts</li>
+          <li>Criando mais uma funcionalidade no serviço de correntistas: 
+          services/correntista.service.ts</li>
+        </ul>
       </ul>
-      <ul><strong>Correntistas</strong>
-        <li>Novo componente correntista: ng g c components/correntista</li>
-        <li>Nova rota para novo componente: app-routing.module.ts</li>
-        <li>Navegação simples para a rota correntistas e CorrentistaComponent: movimentacao-list.component.html</li>
-        <li>Tela para inclusão e listagem de correntistas: components/correntista.component.html</li>
-        <li>Regra de negócio para inclusão e listagem dos correntistas: 
-        components/correntista.component.ts</li>
-        <li>Criando mais uma funcionalidade no serviço de correntistas: 
-        services/correntista.service.ts</li>
-      </ul>
-    </li>
     <br>
     <li>Aula 4 - Construindo um App Android de extrato bancário
-        <ul>
-            <li>Parte 1 - Introdução ao Desenvolvimento Mobile</li>
-            <li>Parte 2 - Android Nativo: Ambiente de Desenvolvimento</li>
-            <li>Parte 3 - Android Nativo: Estrutura de Projetos</li>
-        </ul>
+      <ul>
+        <li>Parte 1 - Introdução ao Desenvolvimento Mobile</li>
+        <li>Parte 2 - Android Nativo: Ambiente de Desenvolvimento</li>
+        <li>Parte 3 - Android Nativo: Estrutura de Projetos</li>
+      </ul>
     </li>  
 </ol>
 </div>
