@@ -38,7 +38,7 @@ For the client side, allow clients to access their bank statements and account b
 As seguintes ferramentas foram usadas na construção do projeto:<br><br>
 
 |                Tipo                |      Ferramenta      |                Referência                |
-| :--------------------------------: | :------------------: | :--------------------------------------: | -------------------------------- | --- |
+| :--------------------------------: | :------------------: | :--------------------------------------: |
 |     Programming Language (App)     |        KOTLIN        |         https://kotlinlang.org/          |
 |                IDE                 |    ANDROID STUDIO    |   https://developer.android.com/studio   |
 |  Scripts and dependencies manager  |        GRADLE        |           https://gradle.org/            |
