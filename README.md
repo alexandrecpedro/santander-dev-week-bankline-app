@@ -28,11 +28,11 @@
 <h2> 💡 Objetivo </h2>
 Construir um sistema de ciação de extratos bancários do Banco Santander, usando uma arquitetura robusta e testável, desde o frontend até o lado do servidor, envolvendo inclusive um aplicativo para Android.
 <!-- Build an application that creates bank statements of Santander bank, using a robust and testable architecture, from app to servidor side.  -->
-No caso do aplicativo para Android, usou-se o padrão de projeto MVVM (Model - View - ViewModel).
+<br>No caso do aplicativo para Android, usou-se o padrão de projeto MVVM (Model - View - ViewModel).
 <!-- For the Android, using the MVVM structural pattern.  -->
-Para o lado do servidor, construiu-se uma API RESTful com estrutura em Spring Boot.
+<br>Para o lado do servidor, construiu-se uma API RESTful com estrutura em Spring Boot.
 <!-- For the servidor side, building an API RESTful with Spring Boot structure. -->
-Já para o lado do cliente (ou lado do frontend), permitiu-se que os clientes tivessem acesso a seus extratos bancários e o respectivo saldo.
+<br>Já para o lado do cliente (ou lado do frontend), permitiu-se que os clientes tivessem acesso a seus extratos bancários e o respectivo saldo.
 <!-- For the client side, allow clients to access their bank statements and account balances. -->
 </div>
 <br>
