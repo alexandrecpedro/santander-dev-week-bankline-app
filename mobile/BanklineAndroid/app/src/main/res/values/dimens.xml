@@ -1,3 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Money_in and Money_out -->
+    <dimen name="money_in_24dp">24dp</dimen>
+    <dimen name="money_in_viewportWidth">24</dimen>
+    <dimen name="money_in_viewportHeight">24</dimen>
+    <!-- Margin -->
+    <dimen name="margin_default">16dp</dimen>
+    <dimen name="margin_half_default">8dp</dimen>
+    <!-- TextView -->
+    <dimen name="tv_width">0dp</dimen>
+    <dimen name="tv_marginTop">32dp</dimen>
+    <!-- ImageView -->
+    <dimen name="iv_width">80dp</dimen>
+
 </resources>
