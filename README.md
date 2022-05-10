@@ -62,8 +62,7 @@ As seguintes ferramentas foram usadas na construção do projeto:<br><br>
 <br>
 <br>
 
-<!-- <div align = 'center'> -->
-<div>
+<div align = 'center'>
   <h3>Backend | API</h3>
   <img height =' 100px ' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"/>
   <img height =' 100px ' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" />
