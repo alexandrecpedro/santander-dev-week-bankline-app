@@ -28,12 +28,12 @@
 <h2> 💡 Objetivo </h2>
 Construir um sistema de ciação de extratos bancários do Banco Santander, usando uma arquitetura robusta e testável, desde o frontend até o lado do servidor, envolvendo inclusive um aplicativo para Android.
 <!-- Build an application that creates bank statements of Santander bank, using a robust and testable architecture, from app to servidor side.  -->
-<br>No caso do aplicativo para Android, usou-se o padrão de projeto MVVM (Model - View - ViewModel).
-<!-- For the Android, using the MVVM structural pattern.  -->
 <br>Para o lado do servidor, construiu-se uma API RESTful com estrutura em Spring Boot.
 <!-- For the servidor side, building an API RESTful with Spring Boot structure. -->
 <br>Já para o lado do cliente (ou lado do frontend), permitiu-se que os clientes tivessem acesso a seus extratos bancários e o respectivo saldo.
 <!-- For the client side, allow clients to access their bank statements and account balances. -->
+<br>No caso do aplicativo para Android, desenvolveu-se um app que explorasse o domínio bancário, ao consumir a API previamente construída. Usou-se o padrão de projeto MVVM (Model - View - ViewModel).
+<!-- For the Android, using the MVVM structural pattern.  -->
 </div>
 <br>
 
@@ -47,16 +47,14 @@ As seguintes ferramentas foram usadas na construção do projeto:<br><br>
 |                IDE                 |    ANDROID STUDIO    |   https://developer.android.com/studio   |
 |  Scripts and dependencies manager  |        GRADLE        |           https://gradle.org/            |
 |          Scripts language          |        GROOVY        |           https://gradle.org/            |
-|                <!--                | Injection Framework  |                   KOIN                   | https://insert-koin.io/          | --> |
+|    Swipe Refresh Design Pattern    |    SWIPE REFRESH     |   https://developer.android.com/jetpack/androidx/releases/swiperefreshlayout      |
 |          HTTP API Library          |      RETROFIT2       |    https://square.github.io/retrofit/    |
-|                <!--                | HTTP Client Library  |                 OkHTTP3                  | https://square.github.io/okhttp/ | --> |
 | Programming Language (Server Side) |         JAVA         | https://docs.oracle.com/javase/tutorial/ |
 |     IDE Eclipse (Server Side)      |       ECLIPSE        | https://docs.oracle.com/javase/tutorial/ |
 |            Spring Boot             |     SPRING BOOT      |         https://start.spring.io/         |
 |         API RESTful (JSON)         |       SWAGGER3       |           https://swagger.io/            |
 |              Testing               |        JUNIT5        |        https://junit.org/junit5/         |
 |              Database              |     POSTGRE SQL      |       https://www.postgresql.org/        |
-|                <!--                | In-memory data store |                  REDIS                   | https://redis.io/                | --> |
 |              Security              |         JWT          |             https://jwt.io/              |
 | Programming Language (Client Side) |       ANGULAR        |           https://angular.io/            |
 |             Bootstrap              |     BOOTSTRAP 5      |        https://getbootstrap.com/         |
@@ -86,13 +84,9 @@ As seguintes ferramentas foram usadas na construção do projeto:<br><br>
   <img width =' 100px ' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/androidstudio/androidstudio-original.svg" />
   <img width =' 100px ' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gradle/gradle-plain.svg"/>
   <img width =' 100px ' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/groovy/groovy-original.svg" />
-  <!-- <img width =' 100px ' src="https://insert-koin.io/img/koin_new_logo.png" /> -->
   <br>
   <img height=' 100px ' src="./project/assets/Retrofit.jpeg" />
   <br>
-  <!-- <img height =' 100px ' src="./Android/assets/OkHttp.png" /> -->
-  <br>
-  <!-- <img height =' 100px ' src="./project/assets/redis.png" /> -->
 </div>
 
 <div id="percurso">
@@ -100,11 +94,32 @@ As seguintes ferramentas foram usadas na construção do projeto:<br><br>
 
 <ol>
     <li>Aula 1 - Configurando/preparando os ambientes de desenvolvimento (Infraestrutura)
-      <ul>
-        <li>Instalar Eclipse (IDE) e JDK 8 (1.8), VS Code, PostgreSQL, Android Studio e NodeJS</li>
+      <ul><strong>Backend</strong>
+        <li>Instalar Eclipse (IDE) e JDK 8 (1.8)</li>
         <li>Abrir e logar o Eclipse com JDK 8 (1.8)</li>
+      </ul>
+      <br>
+      <ul><strong>Banco de Dados</strong>
+        <li>Instalar PostgreSQL</li>
         <li>Abrir, logar e criar um novo banco de dados (banklineapi_db) no PostgreSQL</li>
-        <li>Abrir o VS Code</li>
+      </ul>
+      <br>
+      <ul><strong>Frontend</strong>
+        <li>Instalar e abrir VS Code</li>
+        <li>Instalar NodeJS</li>
+        <li>Instalar Angular CLI na raiz do projeto</li>
+      </ul>
+      <br>
+      <ul><strong>Mobile - Android</strong>
+        <li>Instalar e abrir Android Studio</li>
+        <li>Criar novo projeto: Bankline-Android</li>
+        <li>
+          <ul>Entendo o conceito do projeto mobile para Android
+            <li>Parte 1 - Introdução ao Desenvolvimento Mobile</li>
+            <li>Parte 2 - Android Nativo: Ambiente de Desenvolvimento</li>
+            <li>Parte 3 - Android Nativo: Estrutura de Projetos</li>
+          </ul>
+        </li>
       </ul>
     </li>
     <br>
@@ -214,10 +229,46 @@ As seguintes ferramentas foram usadas na construção do projeto:<br><br>
       </ul>
     <br>
     <li>Aula 4 - Construindo um App Android de extrato bancário
-      <ul>
-        <li>Parte 1 - Introdução ao Desenvolvimento Mobile</li>
-        <li>Parte 2 - Android Nativo: Ambiente de Desenvolvimento</li>
-        <li>Parte 3 - Android Nativo: Estrutura de Projetos</li>
+      <ul><strong>Parte 1 - Conhecendo a API: Modelagem do Domínio</strong>
+        <li>Domínio/Problema - desenvolver um app Android nativo que explore o domínio bancário (o extrato com as movimentações do correntista)</li>
+        <li>Integrando o Parcelable: id 'kotlin-parcelize'</li>
+        <li>Ativando a viewBinding em build.gradle
+          // Reference: https://developer.android.com/topic/libraries/view-binding
+            buildFeatures {
+                viewBinding true
+            }
+        </li>
+        <li>Construir as views os modelos de domínio e ui, bem como os seus respectivos layouts</li>
+        <li>Atualizar o AndroidManifest.xml</li>
+      </ul>
+      <ul><strong>Parte 2 - Construindo a UX/UI: Material Design</strong>
+        <li>Padronizar os temas, cores, dimensões e strings em inglês e português</li>
+        <li>Novas dependências a serem adicionadas:
+          // Additional dependencies AndroidX:
+            implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+        </li>
+        <li>Criar classe BankStatementAdapter.kt</li>
+      </ul>
+      <ul><strong>Parte 3 - Consumindo a API: Retrofit, Coroutines e LiveData</strong>
+        <li>Injetar dependência do Live Data
+          // Additional dependencies AndroidX:
+            implementation 'androidx.activity:activity-ktx:1.4.0'
+            implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.4.1'
+        </li>
+        <li>Injetar dependência do Retrofit em build.gradle:
+          // Reference: https://github.com/square/retrofit
+            implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+            implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+        </li>
+        <li>Criar BanklineApi interface com coroutine: data.remote.BanklineApi.kt</li>
+        <li>Criar BanklineRepository (padrão singleton): data.BanklineRepository.kt</li>
+        <li>Criar State (sealed class): data.State.kt</li>
+        <li>Criar BankStatementViewModel (class): ui.statement.BankStatementViewModel.kt</li>
+        <li>Integrar Binding com SwipeRefresh: ui.statement.BankStatementActivity.kt</li>
+      </ul>
+      <ul><strong>Parte 4 - Conclusão e dicas finais</strong>
+        <li>Modificar ícone do app</li>
+        <li>Possibilidades de melhorias no app: verificar os To Do's (TODO)</li>
       </ul>
     </li>  
 </ol>
