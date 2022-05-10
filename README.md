@@ -41,6 +41,7 @@ Construir um sistema de ciação de extratos bancários do Banco Santander, usan
 <h2> 🛠 Tecnologias </h2>
 As seguintes ferramentas foram usadas na construção do projeto:<br><br>
 
+<p align="center">
 |                Tipo                |      Ferramenta      |                Referência                |
 | :--------------------------------: | :------------------: | :--------------------------------------: |
 |     Programming Language (App)     |        KOTLIN        |         https://kotlinlang.org/          |
@@ -57,6 +58,7 @@ As seguintes ferramentas foram usadas na construção do projeto:<br><br>
 |              Security              |         JWT          |             https://jwt.io/              |
 | Programming Language (Client Side) |       ANGULAR        |           https://angular.io/            |
 |             Bootstrap              |     BOOTSTRAP 5      |        https://getbootstrap.com/         |
+</p>
 <br>
 <br>
 
