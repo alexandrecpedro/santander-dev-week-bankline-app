@@ -92,6 +92,7 @@ As seguintes ferramentas foram usadas na construção do projeto:<br><br>
 
 <ol>
     <li>Aula 1 - Configurando/preparando os ambientes de desenvolvimento (Infraestrutura)
+      <br>
       <ul><strong>Backend</strong>
         <li>Instalar Eclipse (IDE) e JDK 8 (1.8)</li>
         <li>Abrir e logar o Eclipse com JDK 8 (1.8)</li>
@@ -227,6 +228,7 @@ As seguintes ferramentas foram usadas na construção do projeto:<br><br>
       </ul>
     <br>
     <li>Aula 4 - Construindo um App Android de extrato bancário
+      <br>
       <ul><strong>Parte 1 - Conhecendo a API: Modelagem do Domínio</strong>
         <li>Domínio/Problema - desenvolver um app Android nativo que explore o domínio bancário (o extrato com as movimentações do correntista)</li>
         <li>Integrando o Parcelable: id 'kotlin-parcelize'</li>
@@ -239,6 +241,7 @@ As seguintes ferramentas foram usadas na construção do projeto:<br><br>
         <li>Construir as views os modelos de domínio e ui, bem como os seus respectivos layouts</li>
         <li>Atualizar o AndroidManifest.xml</li>
       </ul>
+      <br>
       <ul><strong>Parte 2 - Construindo a UX/UI: Material Design</strong>
         <li>Padronizar os temas, cores, dimensões e strings em inglês e português</li>
         <li>Novas dependências a serem adicionadas:
@@ -247,6 +250,7 @@ As seguintes ferramentas foram usadas na construção do projeto:<br><br>
         </li>
         <li>Criar classe BankStatementAdapter.kt</li>
       </ul>
+      <br>
       <ul><strong>Parte 3 - Consumindo a API: Retrofit, Coroutines e LiveData</strong>
         <li>Injetar dependência do Live Data
           // Additional dependencies AndroidX:
@@ -264,6 +268,7 @@ As seguintes ferramentas foram usadas na construção do projeto:<br><br>
         <li>Criar BankStatementViewModel (class): ui.statement.BankStatementViewModel.kt</li>
         <li>Integrar Binding com SwipeRefresh: ui.statement.BankStatementActivity.kt</li>
       </ul>
+      <br>
       <ul><strong>Parte 4 - Conclusão e dicas finais</strong>
         <li>Modificar ícone do app</li>
         <li>Possibilidades de melhorias no app: verificar os To Do's (TODO)</li>
