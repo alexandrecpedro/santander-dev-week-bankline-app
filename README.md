@@ -228,7 +228,7 @@ As seguintes ferramentas foram usadas na construção do projeto:<br><br>
       </ul>
     <br>
     <li>Aula 4 - Construindo um App Android de extrato bancário
-      <br>
+      <br><br>
       <ul><strong>Parte 1 - Conhecendo a API: Modelagem do Domínio</strong>
         <li>Domínio/Problema - desenvolver um app Android nativo que explore o domínio bancário (o extrato com as movimentações do correntista)</li>
         <li>Integrando o Parcelable: id 'kotlin-parcelize'</li>
