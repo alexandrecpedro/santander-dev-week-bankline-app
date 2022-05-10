@@ -92,7 +92,7 @@ As seguintes ferramentas foram usadas na construção do projeto:<br><br>
 
 <ol>
     <li>Aula 1 - Configurando/preparando os ambientes de desenvolvimento (Infraestrutura)
-      <br>
+      <br><br>
       <ul><strong>Backend</strong>
         <li>Instalar Eclipse (IDE) e JDK 8 (1.8)</li>
         <li>Abrir e logar o Eclipse com JDK 8 (1.8)</li>
