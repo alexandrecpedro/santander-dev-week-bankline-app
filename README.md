@@ -40,8 +40,7 @@ Construir um sistema de ciação de extratos bancários do Banco Santander, usan
 <div id="tecnologias">
 <h2> 🛠 Tecnologias </h2>
 As seguintes ferramentas foram usadas na construção do projeto:<br><br>
-    
-| :--------------------------------------------------------------------------------------------------: |
+
 |                Tipo                |      Ferramenta      |                Referência                |
 | :--------------------------------: | :------------------: | :--------------------------------------: |
 |     Programming Language (App)     |        KOTLIN        |         https://kotlinlang.org/          |
