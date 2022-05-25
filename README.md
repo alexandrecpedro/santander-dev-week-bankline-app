@@ -47,7 +47,7 @@ As seguintes ferramentas foram usadas na construção do projeto:<br><br>
 |     Programming Language (App)     |        KOTLIN        |         https://kotlinlang.org/          |
 |                IDE                 |    ANDROID STUDIO    |   https://developer.android.com/studio   |
 |  Scripts and dependencies manager  |        GRADLE        |           https://gradle.org/            |
-|          Scripts language          |        GROOVY        |           https://gradle.org/            |
+|          Scripts language          |        GROOVY        |         https://groovy-lang.org/         |
 |          HTTP API Library          |      RETROFIT2       |    https://square.github.io/retrofit/    |
 | Programming Language (Server Side) |         JAVA         | https://docs.oracle.com/javase/tutorial/ |
 |     IDE Eclipse (Server Side)      |       ECLIPSE        | https://docs.oracle.com/javase/tutorial/ |
